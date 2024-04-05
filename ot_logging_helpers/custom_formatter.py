@@ -10,7 +10,9 @@ class CustomFormatter(logging.Formatter):
             # Add the context information to the log message
             record.msg = f"{context_str}{record.msg}"
 
-        record.name = record.name[:10].ljust(10)
+        logger_names_max_length = max(len('root'), max([len(logger.name) for logger in logging.Logger.manager.loggerDict.values() if isinstance(logger, logging.Logger)]))
+
+        record.name = record.name[:logger_names_max_length].ljust(logger_names_max_length)
         record.levelname = record.levelname[:8].ljust(8)
 
         return super().format(record)
