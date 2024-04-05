@@ -1,10 +1,3 @@
-# ot-logging-helpers
-
-This python package provides logging helpers that are used in Orthanc Team projects.
-
-## Demo
-
-```python
 from ot_logging_helpers import LogContext, configure_logging
 import logging
 import threading
@@ -36,5 +29,3 @@ for i in range(0, 2):
 # 2024-04-05 15:05:28,163 - root       - WARNING  -  Worker 1 | next-context | my warning
 # 2024-04-05 15:05:28,163 - root       - INFO     -  Worker 2 | my top level worker message
 # 2024-04-05 15:05:28,163 - root       - WARNING  -  Worker 2 | next-context | my warning
-
-```
